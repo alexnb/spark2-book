@@ -59,7 +59,7 @@ object ANN {
     session.range(files.length).toDF()
       .map(row => {
         val fileIndex = row.getAs[Long](0)
-        (fileIndex.toInt, files(row.getAs[Long](0).toInt))
+        (fileIndex.toInt, files(fileIndex.toInt))
       }).toDF("label", "features")
   }
 
